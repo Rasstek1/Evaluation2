@@ -29,3 +29,4 @@ Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);//route pou
 
 
 
+
