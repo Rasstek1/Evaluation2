@@ -2,50 +2,52 @@
 
 @section('content')
 
-    <div class="row">
+    <div class="container mt-5">
+        <h2 class="my-4">Liste des profils</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        @if(count($profils) > 0)
-
-            @foreach ($profils as $profil)
-
-                <div class="col-md-4"> <!-- Erreur corrigée ici, enlèvement d'un "<" supplémentaire -->
-
-                    <div class="card">
-
-                        <img src="{{ asset($profil->photoPath) }}" class="card-img-top" alt="{{ $profil->nom }}">
-
-                        <div class="card-body">
-
-                            <h5 class="card-title">{{ $profil->nom }} {{ $profil->prenom }}</h5>
-
-                            <p class="card-text">
-                                Sexe: {{ $profil->sexe }}<br>
-                                Date de naissance: {{ $profil->date_naissance }}
-                            </p>
-
-                            <a href="/profils/{{ $profil->id }}/edit" class="btn btn-primary">Modifier</a>
-
-                            <form action="/profils/{{ $profil->id }}" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Supprimer</button>
-                            </form>
-
+            @if(count($profils) > 0)
+                @foreach ($profils as $profil)
+                    <div class="col">
+                        <div class="boite-blurry">
+                            <img src="{{ asset($profil->photoPath) }}" alt="Photo de profil" class="img-profil" />
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $profil->prenom }} {{ $profil->nom }}</h4>
+                                <p class="card-text">
+                                    <strong>Numéro :</strong> {{ $profil->id }} <br>
+                                    <strong>Téléphone :</strong> {{ $profil->telephone }} <br>
+                                    <strong>Courriel :</strong> {{ $profil->courriel }} <br>
+                                    <strong>Sexe :</strong> {{ $profil->sexe }} <br>
+                                    <strong>Date de naissance :</strong> {{ $profil->date_naissance }}
+                                </p>
+                                <a href="/profils/{{ $profil->id }}/edit" class="btn btn-primary">Modifier</a>
+                                <form action="/profils/{{ $profil->id }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </form>
+                            </div>
                         </div>
-
                     </div>
-
+                @endforeach
+            @else
+                <div class="col">
+                    <div class="boite-blurry">
+                        <div class="card-body">
+                            <p class="card-text text-center">Aucun profil disponible.</p>
+                        </div>
+                    </div>
                 </div>
+            @endif
 
-            @endforeach
-
-        @else
-
-            <p>Aucun profil pour le moment.</p>
-
-        @endif <!-- Il manque ce endif ici -->
-
+        </div>
+        <div class="my-4">
+            <a href="/profils/create" class="btn btn-success">Ajouter un nouveau profil</a>
+        </div>
     </div>
+
+@endsection
+
 
 
 

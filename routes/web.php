@@ -16,7 +16,9 @@ use App\Http\Controllers\ProfilController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::get('/profils', [ProfilController::class, 'index']);
 Route::get('/profils/create', [ProfilController::class, 'create']);
@@ -24,4 +26,5 @@ Route::post('/profils', [ProfilController::class, 'store']);
 Route::get('/profils/{id}/edit', [ProfilController::class, 'edit']);
 Route::put('/profils/{id}', [ProfilController::class, 'update']);
 Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);
+
 

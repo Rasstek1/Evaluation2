@@ -91,11 +91,11 @@ class ProfilController extends Controller
     {
         $profil = Profil::find($id);
         if (!$profil) {
-            return redirect('/index')->with('error', 'Profil non trouvé');
+            return redirect('/profils')->with('error', 'Profil non trouvé');
         }
         $profil->delete();
 
-        return redirect('/index')->with('success', 'Profil supprimé');
+        return redirect('/profils')->with('success', 'Profil supprimé');
     }
 
 
