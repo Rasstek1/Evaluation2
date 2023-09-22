@@ -2,7 +2,7 @@
 @section('content')
 
 
-
+<!--Page Contact-->
 <div class="container boite-blurry mt-5" style="max-width: 600px; border: 1px solid #dee2e6; border-radius: 0.25rem; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); padding: 2rem;">
     <h2 class="mb-4" style="text-align: center;">Contactez-nous</h2>
 
@@ -13,7 +13,7 @@
     </div>
 
     <form action="/envoyerEmail" method="POST">
-        @csrf  <!-- N'oubliez pas ce jeton CSRF pour la sécurité -->
+        @csrf  <!--Jeton CSRF pour la sécurité -->
         <div class="mb-3">
             <label for="email" class="form-label">Votre Email</label>
             <input type="email" class="form-control" id="email" name="email">

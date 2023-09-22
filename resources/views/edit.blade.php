@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+
+    <!--Page de modification de profil-->
     <h2 class="mt-5">Modifier le profil</h2>
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
 

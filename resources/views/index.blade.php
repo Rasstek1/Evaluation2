@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<!--Page de profils ou on affiche tout les profils-->
     <div class="container mt-5">
         <h2 class="my-4">Liste des profils</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -15,7 +15,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ $profil->prenom }} {{ $profil->nom }}</h4>
                                 <p class="card-text">
-                                 <!--   <strong>Id :</strong> {{ $profil->id }} <br>-->
+                                 <!--   <strong>Id :</strong> {{ $profil->id }} <br>   j'ai commenté le ID-->
                                     <strong>Pays :</strong> {{ $profil->pays }} <br>
                                     <strong>Sexe :</strong> {{ $profil->sexe }} <br>
                                     <strong>Date de naissance :</strong> {{ $profil->date_naissance }}

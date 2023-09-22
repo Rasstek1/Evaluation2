@@ -1,11 +1,13 @@
 @extends('layout')
 @section('content')
+
+    <!--Page De creation de profil-->
     <h2 class="mt-5">Créer le profil</h2>
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
         <form method="post" action="/profils" enctype="multipart/form-data">
             @csrf
 
-            <!-- Les champs du formulaire -->
+            <!-- Les champs du formulaire avec les noms pour designer les attribut -->
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" name="nom" id="nom" required>
@@ -60,7 +62,7 @@
 @endsection
 
 
-
+<!--Script pour le select2-->
 <script>
     $(document).ready(function () {
         $('#pays').select2();

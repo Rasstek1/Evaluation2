@@ -1,5 +1,6 @@
 @extends('layout')
 
+<!--Page d'accueil-->
 @section('title', 'Accueil')
 
 @section('content')

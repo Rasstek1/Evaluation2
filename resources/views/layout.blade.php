@@ -1,3 +1,5 @@
+
+<!--Layout du site-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.0/dist/css/select2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.0/dist/js/select2.min.js"></script>
 
-    <!-- Vos propres CSS et JS -->
+    <!-- Liens CSS et JS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 

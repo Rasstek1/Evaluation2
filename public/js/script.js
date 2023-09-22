@@ -65,7 +65,7 @@
 });
 */
 
-
+//Animation move left right avec le Dom chargé, Intercepte également les soumissions de formulaire et les gére de manière asynchrone
 document.addEventListener('DOMContentLoaded', (event) => {
     const content = document.querySelector('.content');
     content.classList.remove('move-left', 'move-right');

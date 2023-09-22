@@ -4,20 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profil;
+
 class ProfilController extends Controller
 {
-
+    /**
+     * Affiche la liste de tous les profils.
+     *
+     * @return \Illuminate\View\View
+     */
     public function index() {
-        $profils = Profil::all(); // Récupérer tous les profils
-        return view('index', ['profils' => $profils]); // Passer les profils à la vue
+        $profils = Profil::all();
+        return view('index', ['profils' => $profils]);
     }
 
+    /**
+     * Affiche le formulaire pour créer un nouveau profil.
+     *
+     * @return \Illuminate\View\View
+     */
     public function create() {
         return view('create');
     }
 
+    /**
+     * Stocke un nouveau profil dans la base de données.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request) {
-        // Validation
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
@@ -27,16 +42,9 @@ class ProfilController extends Controller
             'photoPath' => 'nullable|image',
         ]);
 
-        // Création du profil
         $profil = new Profil;
-        $profil->nom = $request->nom;
-        $profil->prenom = $request->prenom;
-        $profil->pays = $request->pays;
-        $profil->sexe = $request->sexe;
-        $profil->date_naissance = $request->date_naissance;
-        $profil->photoPath = $request->photoPath;
+        $profil->fill($request->all());
 
-        // Gestion de l'upload de la photo
         if ($request->hasFile('photoPath')) {
             $file = $request->file('photoPath');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -49,9 +57,13 @@ class ProfilController extends Controller
         return redirect('profils')->with('success', 'Profil créé');
     }
 
-    // Pour éditer un profil existant
-    public function edit($id)
-    {
+    /**
+     * Affiche le formulaire pour éditer un profil existant.
+     *
+     * @param int $id
+     * @return \Illuminate\View\View
+     */
+    public function edit($id) {
         $profil = Profil::find($id);
         if (!$profil) {
             return redirect('/profils')->with('error', 'Profil non trouvé');
@@ -59,9 +71,14 @@ class ProfilController extends Controller
         return view('edit', compact('profil'));
     }
 
-// Pour mettre à jour un profil existant
-    public function update(Request $request, $id)
-    {
+    /**
+     * Met à jour un profil existant dans la base de données.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id) {
         $validatedData = $request->validate([
             'nom' => 'required|max:255',
             'prenom' => 'required|max:255',
@@ -69,7 +86,6 @@ class ProfilController extends Controller
             'sexe' => 'required',
             'date_naissance' => 'required|date',
             'photoPath' => 'nullable|image',
-            // ajoutez d'autres règles de validation ici
         ]);
 
         $profil = Profil::find($id);
@@ -77,7 +93,6 @@ class ProfilController extends Controller
             return redirect('/profils')->with('error', 'Profil non trouvé');
         }
 
-        // Gestion de l'upload de la photo
         if ($request->hasFile('photoPath')) {
             $file = $request->file('photoPath');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -90,10 +105,13 @@ class ProfilController extends Controller
         return redirect('/profils')->with('success', 'Profil mis à jour');
     }
 
-
-// Pour supprimer un profil
-    public function destroy($id)
-    {
+    /**
+     * Supprime un profil existant de la base de données.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id) {
         $profil = Profil::find($id);
         if (!$profil) {
             return redirect('/profils')->with('error', 'Profil non trouvé');
@@ -102,6 +120,4 @@ class ProfilController extends Controller
 
         return redirect('/profils')->with('success', 'Profil supprimé');
     }
-
-
 }
