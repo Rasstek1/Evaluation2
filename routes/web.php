@@ -28,3 +28,4 @@ Route::put('/profils/{id}', [ProfilController::class, 'update']);
 Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);
 
 
+

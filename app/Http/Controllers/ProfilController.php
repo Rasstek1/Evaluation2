@@ -82,7 +82,7 @@ class ProfilController extends Controller
             $file = $request->file('photoPath');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads'), $filename);
-            $profil->photoPath = 'uploads/' . $filename;
+            $validatedData['photoPath'] = 'uploads/' . $filename;
         }
 
         $profil->update($validatedData);

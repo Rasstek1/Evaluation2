@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <div class="container mt-5">
         <h2 class="my-4">Liste des profils</h2>
@@ -10,11 +11,11 @@
                 @foreach ($profils as $profil)
                     <div class="col">
                         <div class="boite-blurry">
-                            <img src="{{ asset($profil->photoPath) }}" alt="Photo de profil" class="img-profil" />
+                            <img src="{{ asset($profil->photoPath) }}" alt="Photo de profil" class="img-profil"/>
                             <div class="card-body">
                                 <h4 class="card-title">{{ $profil->prenom }} {{ $profil->nom }}</h4>
                                 <p class="card-text">
-                                    <strong>Id :</strong> {{ $profil->id }} <br>
+                                 <!--   <strong>Id :</strong> {{ $profil->id }} <br>-->
                                     <strong>Pays :</strong> {{ $profil->pays }} <br>
                                     <strong>Sexe :</strong> {{ $profil->sexe }} <br>
                                     <strong>Date de naissance :</strong> {{ $profil->date_naissance }}
@@ -23,9 +24,9 @@
                                 <form action="/profils/{{ $profil->id }}" method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="#" data-id="{{ $profil->id }}" class="btn btn-danger delete-profil">Supprimer</a>
-
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce profil ?')">Supprimer</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
@@ -47,7 +48,6 @@
     </div>
 
 @endsection
-
 
 
 
