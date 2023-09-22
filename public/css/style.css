@@ -32,7 +32,10 @@ header {
     background: transparent;
     border: none;
     box-shadow: none;
+    backdrop-filter: blur(10px);
+
 }
+
 
 /* Ajouter un effet de flou à une boîte */
 .boite-blurry {
@@ -56,6 +59,10 @@ header {
 h1{
     color: #facc01;
 }
+h5{
+    color: #3d73fc;
+}
+
 h2, h3, h4{
     text-align: center;
     color:#facc01;
@@ -89,11 +96,12 @@ th{
 
 /* Ajouter un style pour le bouton de la barre de navigation lorsqu'elle est réduite (version mobile) */
 .navbar-toggler {
-    border-color: #ff5733;
+    border-color: #3d73fc;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 87, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(61, 115, 252, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    color: #3d73fc;
 }
 
 .container {
@@ -101,7 +109,8 @@ th{
 }
 
 footer {
-    background-color: rgba(51, 51, 51, 0.5); /* La couleur de fond avec une transparence de 0.5 */
+   /* background-color: rgba(51, 51, 51, 0.5); /* La couleur de fond avec une transparence de 0.5 */
+    backdrop-filter: blur(10px);
     color: #fff;
     padding: 20px;
     font-size: 14px;
@@ -115,7 +124,9 @@ footer {
     flex-direction: column; /* Aligner les éléments en colonne */
     margin-top:50px;
 }
-
+.footer-text{
+    color:#facc01;
+}
 
 .logo-img {
     width: 100px;  /* Ajustez la valeur comme nécessaire */
@@ -129,6 +140,7 @@ footer {
     object-fit: contain;
     margin-left:20px;
     margin-top:20px;
+    border: 2px solid black;
 }
 
 
@@ -155,9 +167,9 @@ footer {
 }*/
 
 /*Animation slide en arrière en avant*/
-.content {
+/*.content {
 
-    transition: transform 0.5s; /* Ajout de la transition */
+    transition: transform 0.5s; /* Ajout de la transition
 }
 
 @keyframes shrink {
@@ -188,4 +200,18 @@ footer {
 
 .grow {
     animation: grow 0.5s forwards;
+}*/
+
+
+.content {
+    transition: transform 0.5s ease;
 }
+
+.move-left {
+    transform: translateX(-100%);
+}
+
+.move-right {
+    transform: translateX(100%);
+}
+

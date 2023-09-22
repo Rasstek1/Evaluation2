@@ -20,7 +20,7 @@
 <body>
 <div class="video-background">
     <video playsinline autoplay muted loop>
-        <source src="{{ asset('video/abstract.mp4') }}" type="video/mp4">
+        <source src="{{ asset('video/yellow.mp4') }}" type="video/mp4">
     </video>
 </div>
 
@@ -30,7 +30,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('img/Logo.png') }}" alt="Logo" class="logo-img"/>
             </a>
-            <h2>The Profile <span style="color: #fcc33d;">Factory</span></h2>
+            <h2>TheProfile<span style="color: #3d73fc;">Factory</span></h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -63,7 +63,7 @@
 </main>
 
 <footer class="text-center ">
-    <p>© 2023 TheProfileFactory.com</p>
+    <p class="footer-text">© 2023 TheProfileFactory.com</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
