@@ -7,9 +7,9 @@
     <h2 class="mb-4" style="text-align: center;">Contactez-nous</h2>
 
     <div style="margin-bottom: 2rem;">
-        <p><strong>Adresse :</strong> 1188 Boulevard Java</p>
+        <p><strong>Adresse :</strong> 1188 Boulevard du Web</p>
         <p><strong>Téléphone :</strong> 819-456-7890</p>
-        <p><strong>Email :</strong> info@Evaluationparadise.com</p>
+        <p><strong>Email :</strong> info@TheProfileFactory.com</p>
     </div>
 
     <form action="/envoyerEmail" method="POST">

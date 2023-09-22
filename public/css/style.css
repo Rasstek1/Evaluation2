@@ -62,8 +62,10 @@ h1{
 h5{
     color: #3d73fc;
 }
-
-h2, h3, h4{
+h4{
+    color:#facc01;
+}
+h2, h3{
     text-align: center;
     color:#facc01;
 }
