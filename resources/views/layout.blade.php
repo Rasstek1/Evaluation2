@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Mon site</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
@@ -27,7 +30,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('img/Logo.png') }}" alt="Logo" class="logo-img"/>
             </a>
-            <h2>Evaluation <span style="color: #fcc33d;">Paradise</span></h2>
+            <h2>The Profile <span style="color: #fcc33d;">Factory</span></h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,7 +63,7 @@
 </main>
 
 <footer class="text-center ">
-    <p>© 2023 EvaluationParadise.com</p>
+    <p>© 2023 TheProfileFactory.com</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>

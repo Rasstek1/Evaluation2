@@ -52,17 +52,15 @@ header {
 .nav-link{
     color:white;
 }
-h1, h4{
+
+h1{
     color: #facc01;
 }
-h2{
-    color:#facc01;
-}
-
-h3{
+h2, h3, h4{
     text-align: center;
     color:#facc01;
 }
+
 .form-label, form-check-label, td, tr, p{
     color:white;
 }

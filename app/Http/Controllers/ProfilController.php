@@ -21,13 +21,17 @@ class ProfilController extends Controller
         $request->validate([
             'nom' => 'required',
             'prenom' => 'required',
-            // autres règles de validation...
+            'pays' => 'required',
+            'sexe' => 'required',
+            'date_naissance' => 'required|date',
+            'photoPath' => 'nullable|image',
         ]);
 
         // Création du profil
         $profil = new Profil;
         $profil->nom = $request->nom;
         $profil->prenom = $request->prenom;
+        $profil->pays = $request->pays;
         $profil->sexe = $request->sexe;
         $profil->date_naissance = $request->date_naissance;
         $profil->photoPath = $request->photoPath;
@@ -61,6 +65,7 @@ class ProfilController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required|max:255',
             'prenom' => 'required|max:255',
+            'pays' => 'required',
             'sexe' => 'required',
             'date_naissance' => 'required|date',
             'photoPath' => 'nullable|image',

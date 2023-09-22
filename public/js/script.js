@@ -1,4 +1,4 @@
-import '@/bootstrap.js';
+
 
 //Animation pour la transition entre les pages
 /*document.querySelectorAll('a').forEach(link => {
@@ -34,7 +34,7 @@ import '@/bootstrap.js';
     });
 });*/
 
-/*Animation grow shrink avec le Dom chargé*/
+/*Animation grow shrink avec le Dom chargé, Intercepter également les soumissions de formulaire et les gérer de manière asynchrone*/
 document.addEventListener('DOMContentLoaded', (event) => {
     const content = document.querySelector('.content');
 

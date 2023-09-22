@@ -9,5 +9,5 @@ class Profil extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'prenom', 'sexe', 'date_naissance', 'photoPath'];
+    protected $fillable = ['nom', 'prenom', 'sexe', 'date_naissance', 'pays', 'photoPath'];
 }

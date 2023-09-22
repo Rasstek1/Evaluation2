@@ -14,9 +14,8 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{ $profil->prenom }} {{ $profil->nom }}</h4>
                                 <p class="card-text">
-                                    <strong>Numéro :</strong> {{ $profil->id }} <br>
-                                    <strong>Téléphone :</strong> {{ $profil->telephone }} <br>
-                                    <strong>Courriel :</strong> {{ $profil->courriel }} <br>
+                                    <strong>Id :</strong> {{ $profil->id }} <br>
+                                    <strong>Pays :</strong> {{ $profil->pays }} <br>
                                     <strong>Sexe :</strong> {{ $profil->sexe }} <br>
                                     <strong>Date de naissance :</strong> {{ $profil->date_naissance }}
                                 </p>
@@ -24,7 +23,8 @@
                                 <form action="/profils/{{ $profil->id }}" method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                    <a href="#" data-id="{{ $profil->id }}" class="btn btn-danger delete-profil">Supprimer</a>
+
                                 </form>
                             </div>
                         </div>
@@ -47,6 +47,7 @@
     </div>
 
 @endsection
+
 
 
 
