@@ -27,7 +27,7 @@ class ProfilFactory extends Factory
             'pays' => $this->faker->country,
             'sexe' => $this->faker->randomElement(['Homme', 'Femme']),
             'date_naissance' => $this->faker->date,
-            'photoPath' => 'uploads/'  // Mettez un chemin par défaut ou générez-le
+            'photoPath' => 'uploads/'
         ];
     }
 }

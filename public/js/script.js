@@ -94,4 +94,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const audioElement = document.getElementById("audioElement");
+    const audioControl = document.getElementById("audioControl");
 
+    audioControl.addEventListener("click", function() {
+        if (audioElement.paused) {
+            audioElement.play();
+            this.innerText = "Pause";
+        } else {
+            audioElement.pause();
+            this.innerText = "Play";
+        }
+    });
+});

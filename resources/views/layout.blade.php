@@ -44,6 +44,8 @@
             </a>
             <h2>TheProfile<span style="color: #3d73fc;">Factory</span></h2>
 
+
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,8 +77,18 @@
 </main>
 
 <footer class="text-center ">
-    <p class="footer-text">© 2023 TheProfileFactory.com</p>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="footer-text mb-0 pe-3">© 2023 TheProfileFactory.com</p>
+        <button id="audioControl" class="play-btn btn btn-warning ps-3">
+            Play/Pause
+        </button>
+    </div>
+    <audio id="audioElement" loop style="display:none;">
+        <source src="{{ asset('audio/slow.mp3') }}" type="audio/mpeg">
+    </audio>
 </footer>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
