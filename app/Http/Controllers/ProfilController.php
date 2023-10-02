@@ -120,4 +120,6 @@ class ProfilController extends Controller
 
         return redirect('/profils')->with('success', 'Profil supprimé');
     }
+
+
 }
