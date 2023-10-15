@@ -4,16 +4,64 @@
 @section('title', 'Accueil')
 
 @section('content')
-    <h1 class="mt-5">Bienvenue sur The Profile<span style="color: #3d73fc;">Factory</span></h1>
-    <h5>On se meurt d'avoir votre profil!</h5>
+    <div class="model-section">
+        <div class="model-container">
+            <img src="{{ asset('img/img-accueil1.webp') }}" alt="Modèle" class="model-img">
+            <div class="model-text">
+                <h2 style="color:#ffffff;">Trouver du travail en tant que modèle</h2>
+                <p style="color:#ffffff;">Emplois de mannequins pour débutants et mannequins professionnels.</p>
+                <a href="#" class="btn">Pour mannequins et talents</a>
+            </div>
+        </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-        Architecto laborum nesciunt quas vel veniam. Asperiores earum eius exercitationem maiores.<br>
-        Aliquid assumenda libero nobis officia perferendis quibusdam recusandae sunt unde vero.<br>
-        Alias assumenda corporis cum earum, eum facilis id illum minus necessitatibus nihil nisi quibusdam<br>
-        quisquam quod repudiandae, sit tempora voluptatum.</p>
+        <div class="model-container">
+            <img src="{{ asset('img/img-accueil2.jpg') }}" alt="Modèle" class="model-img">
+            <div class="model-text">
+                <h2 style="color:#ffffff;">Trouver des mannequins et talents</h2>
+                <p style="color:#ffffff;">Sources de mannequins, des talents et influenceurs pour tous types de projets.</p>
+                <a href="#" class="btn">Pour les professionnels</a>
+            </div>
+        </div>
+    </div>
 
+    <div class="talent-section" style="margin-top: 30px;">
+        <h1 class="talent-title">Plus que des modèles</h1>
+        <p class="talent-description row">La plateforme de mannequinat du monde, où divers talents de tous niveaux peuvent se connecter et collaborer avec des professionnels en toute sécurité.</p>
+        <div class="talent-container">
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil3.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil4.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil5.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil6.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil7.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <div class="talent-card col-lg-2 col-12">
+                <img src="{{ asset('img/img-accueil8.webp') }}" alt="Image description">
+                <h3>Je suis un nouveau venu</h3>
+                <a href="#">Dites-moi en plus</a>
+            </div>
+            <!-- Répétez le bloc ci-dessus pour les autres cartes -->
+        </div>
+        <button class="btn-talent-function">Comment ça fonctionne</button>
+    </div>
 
 @endsection
-
 

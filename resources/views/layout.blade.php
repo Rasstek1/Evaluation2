@@ -4,9 +4,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>TheProfileFactory</title>
+    <title>TheModelFactory</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -31,19 +31,25 @@
 </head>
 
 <body>
-<div class="video-background">
+<!--<div class="video-background">
     <video playsinline autoplay muted loop>
         <source src="{{ asset('video/yellow.mp4') }}" type="video/mp4">
     </video>
 </div>
+<div class="img-background">
+
+        <img src="{{ asset('img/background') }}" type="img" alt="img-back">
+
+</div>-->
 
 <header>
+
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('img/Logo.png') }}" alt="Logo" class="logo-img"/>
+                <img src="{{ asset('img/Logo2.png') }}" alt="Logo" class="logo-img" style="height: 150px; width: auto;"/>
             </a>
-            <h2>TheProfile<span style="color: #3d73fc;">Factory</span></h2>
+            <h2>Modeling<span style="color: #4261e8;"> Agency</span></h2>
 
 
 
@@ -121,7 +127,7 @@
 
 <footer class="text-center ">
     <div class="d-flex justify-content-between align-items-center">
-        <p class="footer-text mb-0 pe-3">© 2023 TheProfileFactory.com</p>
+        <p class="footer-text mb-0 pe-3">© 2023 TheModelFactory.com</p>
         <button id="audioControl" class="play-btn btn btn-warning ps-3">
             Play/Pause
         </button>

@@ -9,8 +9,30 @@
 body {
     margin: 0;
     padding-bottom: 80px;
-    overflow: auto;
+
+
 }
+main {
+
+}
+header {
+    background: white;
+    border-bottom: #6b7280 1px solid;
+    box-shadow: #6b7280 0px 0px 10px;
+
+
+}
+.container {
+   margin-top:60px;
+    overflow: visible;
+}
+
+.main-content {
+
+
+
+}
+
 
 .video-background {
     position: fixed;
@@ -27,13 +49,22 @@ body {
     width: 100%;
     height: 100%;
 }
-
-header {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
+.img-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
+.img-background img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
 
 /* Ajouter un effet de flou à une boîte */
 .boite-blurry {
@@ -51,11 +82,114 @@ header {
 }
 
 .nav-link{
-    color:white;
+   font-weight: bold;
 }
 
+
+
+
+/***********************image accueil**********************/
+.model-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.model-container {
+    position: relative;
+    width: 48%; /* ajustez comme vous le souhaitez */
+}
+
+.model-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.model-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.talent-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.talent-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.talent-description {
+    font-size: 18px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.talent-container {
+    display: flex;
+    gap: 16px;
+}
+@media (max-width: 968px) {
+    .talent-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+.talent-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.talent-card img {
+    width: 150px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.talent-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.talent-card a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-talent-function {
+    margin-top: 32px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff5555;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/**********************************************************/
 h1{
-    color: #facc01;
+    color: #3d73fc;
 }
 h5{
     color: #3d73fc;
@@ -65,23 +199,23 @@ h4{
 }
 h2, h3{
     text-align: center;
-    color:#facc01;
+    color:#121a3f;
 }
 
 .form-label, form-check-label, td, tr, p{
-    color:white;
+    color:#121a3f;
 }
 th{
     color:black;
 }
 
 .navbar-nav .nav-link {
-    color:white;/*Couleur des liens du nav*/
+    color:#121a3f;/*Couleur des liens du nav*/
     transition: color 0.3s; /* Transition douce lors du changement de couleur */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #facc01; /* Changer la couleur au survol */
+    color: #4261e8; /* Changer la couleur au survol */
 }
 
 
@@ -90,8 +224,8 @@ th{
 }
 
 .logo-img {
-    max-width: 100px; /* Vous pouvez ajuster la taille du logo ici */
-    max-height: 100px; /* Vous pouvez ajuster la hauteur maximale ici */
+    width: 400px; /* Vous pouvez ajuster la taille du logo ici */
+    height: 400px; /* Vous pouvez ajuster la hauteur maximale ici */
 }
 
 /* Ajouter un style pour le bouton de la barre de navigation lorsqu'elle est réduite (version mobile) */
@@ -125,7 +259,7 @@ footer {
     margin-top:50px;
 }
 .footer-text{
-    color:#facc01;
+    color:black;
 }
 
 .logo-img {
