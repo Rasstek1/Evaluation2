@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,23 @@ use App\Http\Controllers\ProfilController;
 |
 */
 
-Route::get('/', function () {//route pour afficher la page d'accueil
+Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 Route::get('/contact', function () {//route pour afficher la page contact
     return view('contact');
 });
@@ -30,3 +46,4 @@ Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);//route pou
 
 
 
+require __DIR__.'/auth.php';

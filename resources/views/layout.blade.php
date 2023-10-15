@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
 
+
     <style>
         .boite-blurry {
             backdrop-filter: blur(10px);
@@ -56,16 +57,58 @@
                         <a class="nav-link" href="{{ url('/') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profils/create') }}">Ajouter évaluation</a>
+                        <a class="nav-link" href="{{ url('/profils/create') }}">Ajouter votre profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profils') }}">Liste évaluations</a>
+                        <a class="nav-link" href="{{ url('/profils') }}">Liste des profils</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/profils/{id}/edit') }}">Modifier profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/contact') }}">Nous contacter</a>
                     </li>
+
+                    <!-- Liens pour la connexion et l'inscription avec Breeze -->
+                    @if (Route::has('login'))
+                        @auth
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <!-- Notez la classe 'dropdown-menu-end' -->
+                                    <li><a class="dropdown-item" href="{{ url('/dashboard') }}">Tableau de bord</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <form method="POST" action="{{ route('logout') }}" class="d-inline" style="width: 100%; display: block;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link nav-link" style="color: black; width: 100%; display: block; text-align: left; padding: 10px 15px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#d4d4d4';" onmouseout="this.style.backgroundColor='transparent';">Déconnexion</button>
+                                        </form>
+
+
+
+                                    </li>
+                                </ul>
+                            </li>
+                        @else
+                            <!-- Liens pour les utilisateurs non authentifiés -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Connexion</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Inscription</a>
+                                </li>
+                            @endif
+                        @endauth
+                    @endif
+
                 </ul>
             </div>
+
         </div>
     </nav>
 </header>
@@ -89,6 +132,7 @@
 </footer>
 
 
+<script src="/js/app.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
