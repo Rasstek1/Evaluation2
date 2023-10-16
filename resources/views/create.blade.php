@@ -2,21 +2,22 @@
 @section('content')
 
     <!--Page De creation de profil-->
-    <h2 class="mt-5">Créer le profil</h2>
+    <h2 class="mt-5 text-center">Créer le profil</h2>
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
         <form method="post" action="/profils" enctype="multipart/form-data">
             @csrf
 
             <!-- Les champs du formulaire avec les noms pour designer les attribut -->
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" name="nom" id="nom" required>
+                <label for="name" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ auth()->user()->name }}" required readonly>
             </div>
 
             <div class="mb-3">
-                <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" name="prenom" id="prenom" required>
+                <label for="firstname" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" value="{{ auth()->user()->firstname }}" required readonly>
             </div>
+
 
 
             <div class="mb-3">

@@ -49,9 +49,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('img/Logo2.png') }}" alt="Logo" class="logo-img" style="height: 150px; width: auto;"/>
             </a>
-            <h2>Modeling<span style="color: #4261e8;"> Agency</span></h2>
-
-
+            <h2>Modeling<span style="color: #4261e8;">Agency</span></h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,17 +57,12 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto pe-5">
+                    <!-- Liens que tout le monde peut visiter en tout temps -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profils/create') }}">Ajouter votre profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profils') }}">Liste des profils</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/profils/{id}/edit') }}">Modifier profil</a>
+                        <a class="nav-link" href="{{ url('/profils') }}">Models</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/contact') }}">Nous contacter</a>
@@ -78,11 +71,24 @@
                     <!-- Liens pour la connexion et l'inscription avec Breeze -->
                     @if (Route::has('login'))
                         @auth
+                            <!-- Liens que seuls les utilisateurs connectés peuvent voir -->
+                            @if(!auth()->user()->profil)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/profils/create') }}">Joindre l'agence</a>
+                                </li>
+                            @endif
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/profils/edit') }}">Modifier profil</a>
+                            </li>
+
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <!-- Notez la classe 'dropdown-menu-end' -->
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="{{ url('/dashboard') }}">Tableau de bord</a></li>
                                     <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
                                     <li>
@@ -93,9 +99,6 @@
                                             @csrf
                                             <button type="submit" class="btn btn-link nav-link" style="color: black; width: 100%; display: block; text-align: left; padding: 10px 15px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#d4d4d4';" onmouseout="this.style.backgroundColor='transparent';">Déconnexion</button>
                                         </form>
-
-
-
                                     </li>
                                 </ul>
                             </li>
@@ -111,12 +114,11 @@
                             @endif
                         @endauth
                     @endif
-
                 </ul>
             </div>
-
         </div>
     </nav>
+
 </header>
 
 <main class="content">

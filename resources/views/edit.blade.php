@@ -2,23 +2,24 @@
 @section('content')
 
     <!--Page de modification de profil-->
-    <h2 class="mt-5">Modifier le profil</h2>
+    <h2 class="mt-5 text-center">Modifier le profil</h2>
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
 
-        <form method="post" action="/profils/{{ $profil->id }}" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+        <form method="post" action="/profils" enctype="multipart/form-data">
+
+        @csrf
+            @method('PATCH')
             <!-- Les champs du formulaire -->
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" name="nom" id="nom" value="{{ $profil->nom }}" required>
+                <input type="text" class="form-control" id="nom" name="nom" value="{{ auth()->user()->name }}" required readonly>
             </div>
 
             <div class="mb-3">
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" name="prenom" id="prenom" value="{{ $profil->prenom }}"
-                       required>
+                <input type="text" class="form-control" id="prenom" name="prenom" value="{{ auth()->user()->firstname }}" required readonly>
             </div>
+
 
             <div class="mb-3">
                 <label for="pays" class="form-label">Pays</label>

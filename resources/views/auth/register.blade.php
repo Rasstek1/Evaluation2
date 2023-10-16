@@ -3,6 +3,10 @@
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname">
+            </div>
 
             <div class="mb-3">
                 <label for="name" class="form-label">Nom</label>

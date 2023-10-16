@@ -188,16 +188,12 @@ header {
 }
 
 /**********************************************************/
-h1{
+
+h1, h2, h4, h5{
     color: #3d73fc;
 }
-h5{
-    color: #3d73fc;
-}
-h4{
-    color:#facc01;
-}
-h2, h3{
+
+h3{
     text-align: center;
     color:#121a3f;
 }
@@ -244,7 +240,7 @@ th{
 
 footer {
    /* background-color: rgba(51, 51, 51, 0.5); /* La couleur de fond avec une transparence de 0.5 */
-    backdrop-filter: blur(10px);
+    background-color: white;
     color: #fff;
     padding: 20px;
     font-size: 14px;
@@ -267,13 +263,12 @@ footer {
     height: auto;  /* Maintient le ratio d'aspect */
 }
 .img-profil {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 400px;
     width: auto;
     height: auto;
     object-fit: contain;
-    margin-left:20px;
-    margin-top:20px;
+    margin:0px;
     border: 2px solid black;
 }
 

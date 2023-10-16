@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');  // Attention ici, la chaîne était incomplète
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

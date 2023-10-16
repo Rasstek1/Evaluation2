@@ -30,32 +30,32 @@
         <div class="talent-container">
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil3.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Je suis un nouveau venu</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil4.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Je suis un mannequin professionel</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil5.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Je suis un influenceu / createur de contenu</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil6.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Je suis photographe</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil7.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Nous sommes une marque</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <div class="talent-card col-lg-2 col-12">
                 <img src="{{ asset('img/img-accueil8.webp') }}" alt="Image description">
-                <h3>Je suis un nouveau venu</h3>
+                <h3 style="font-weight:bold; color:black;">Nous sommes une agence</h3>
                 <a href="#">Dites-moi en plus</a>
             </div>
             <!-- Répétez le bloc ci-dessus pour les autres cartes -->

@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'firstname',  // Ligne ajoutée
         'email',
         'password',
     ];
@@ -42,4 +43,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+//Relation entre les tables
+    public function profil() {
+        return $this->hasOne(Profil::class);
+    }
+
 }
