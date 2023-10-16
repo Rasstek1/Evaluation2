@@ -10,7 +10,7 @@
             @if(count($profils) > 0)
                 @foreach ($profils as $profil)
                     <div class="col">
-                        <div class="boite-blurry d-flex flex-column align-items-center" style="border: rgb(128,128,128) 1px solid;"> <!-- Modifications ici -->
+                        <div class="boite-blurry d-flex flex-column align-items-center" style="border: rgb(241,241,241) 1px solid;  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)"> <!-- Modifications ici -->
 
                             <!-- Photo de profil -->
                             <div class="p-3">

@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +36,9 @@ Route::middleware('auth')->group(function () {
     //route pour le profil
     Route::get('/profils/edit', [ProfilController::class, 'editSelf'])->name('profils.editSelf');
     Route::patch('/profils', [ProfilController::class, 'update'])->name('profils.update');
+    Route::delete('/profils/{profil}', [ProfilController::class, 'destroy'])->name('profils.destroy');
+
+
 
 });
 
@@ -48,7 +52,7 @@ Route::get('/contact', function () {//route pour afficher la page contact
 Route::get('/profils', [ProfilController::class, 'index']);//route pour afficher la liste des profils
 Route::get('/profils/create', [ProfilController::class, 'create']);//route pour afficher le formulaire de création
 Route::post('/profils', [ProfilController::class, 'store']);//route pour enregistrer le profil
-Route::delete('/profils/{id}', [ProfilController::class, 'destroy']);//route pour supprimer un profil
+
 
 
 

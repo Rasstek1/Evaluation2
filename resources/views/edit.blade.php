@@ -58,14 +58,30 @@
             </div>
 
             <!-- Le bouton de validation du formulaire -->
-            <button type="submit" class="btn btn-primary">Modifier le profil</button>
+            <div class="text-center mb-3"> <!-- Ajouté pour centrer les boutons -->
+                <button type="submit" class="btn btn-primary">Modifier le profil</button>
+            </div>
+        </form>
+
+        <form method="post" action="{{ route('profils.destroy', $profil->id) }}" class="text-center"> <!-- Ajouté pour centrer les boutons -->
+            @csrf
+            @method('DELETE')
+            <input type="hidden" name="profil_id" value="{{ $profil->id }}">
+
+            <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre profil? Cette action est irréversible.');">Supprimer le profil</button>
         </form>
 
     </div>
-@endsection
+    @endsection
+
+
+
+
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#pays').select2();
     });
 </script>
+
+

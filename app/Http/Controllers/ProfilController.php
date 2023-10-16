@@ -157,18 +157,23 @@ class ProfilController extends Controller
     /**
      * Supprime un profil existant de la base de données.
      *
-     * @param int $id
+    /**
+     * @param int $user_id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id) {
-        $profil = Profil::find($id);
-        if (!$profil) {
-            return redirect('/profils')->with('error', 'Profil non trouvé');
+    public function destroy(Profil $profil) {
+        // Vérifier que l'utilisateur connecté est bien le propriétaire du profil
+        if (auth()->id() !== $profil->user_id) {
+            return redirect()->route('welcome')->with('error', 'Action non autorisée');
         }
+
+        // Supprimer le profil
         $profil->delete();
 
         return redirect('/profils')->with('success', 'Profil supprimé');
     }
+
+
 
 
 }
