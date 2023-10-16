@@ -41,7 +41,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('img/Logo2.png') }}" alt="Logo" class="logo-img" style="height: 150px; width: auto;"/>
             </a>
-            <h2>Modeling<span style="color: #4261e8;">Agency</span></h2>
+            <h2>Modeling<span style="color: red;font-size:24px;"> Agency</span></h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
