@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <h2 class="mt-5">Connexion</h2>
+    <h2 class="mt-5 text-center">Connexion</h2>
     <div class="col-12 col-md-6 col-lg-4 mx-auto border border-white p-4 boite-blurry mt-5">
         <form method="POST" action="{{ route('login') }}">
             @csrf
